@@ -19,7 +19,7 @@
             </tr>
             <tr>
               <td>
-                <p>By {{ summary }}</p>
+                <p>{{ summary }}</p>
               </td>
             </tr>
             <tr>

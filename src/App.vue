@@ -1,12 +1,19 @@
 <template>
   <HelloWorld msg="Hello World, here is the news!" />
-  <ArticleComponent
-    :media=articles[0].media
-    :title=articles[0].title
-    :author=articles[0].author
-    :summary=articles[0].summary
-    :link=articles[0].link
-  />
+
+  <div id="articleView">
+    <ul>
+      <li v-for="article in articles" :key="article._id">         
+        <ArticleComponent
+          :media=article.media
+          :title=article.title
+          :author=article.author
+          :summary=article.summary
+          :link=article.link
+        />
+      </li>    
+    </ul>
+  </div>
   <!--
   <div class="article">
     <table>
