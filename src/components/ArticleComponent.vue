@@ -1,11 +1,9 @@
 <template>
-  <HelloWorld msg="Hello World, here is the news!" />
-  <!--
-  <div class="article">
+    <div class="article">
     <table>
       <tr>
         <td>
-          <img :src="articles[0].media" width="300" />
+          <img :src="articles[0].media" width="300"/>
         </td>
         <td>
           <table>
@@ -34,34 +32,32 @@
       </tr>
     </table>
   </div>
-  -->
 </template>
-
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
-import data from "./assets/data.json";
-//import ArticleComponent from "./components/ArticleComponent.vue";
-
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-    //ArticleComponent,
-  },
-  data() {
-    return {
-      articles: data,
-    };
-  },
-};
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  
+  <script>
+  export default {
+    name: 'HelloWorld',
+    props: {
+      msg: String
+    }
+  }
+  </script>
+  
+  <!-- Add "scoped" attribute to limit CSS to this component only -->
+  <style scoped>
+  h3 {
+    margin: 40px 0 0;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: #42b983;
+  }
+  </style>
+  
