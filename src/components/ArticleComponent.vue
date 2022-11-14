@@ -5,6 +5,7 @@
     <table>
       <tr>
         
+        <!--Image gets added first if isLeft is true.-->
         <td v-if="isLeft">
             <img :src=media width="300"/>
         </td>
@@ -33,7 +34,8 @@
             </tr>
           </table>
         </td>
-
+        
+        <!--Image gets added first if isLeft is false.-->
         <td v-if="!isLeft">
             <img :src=media width="300"/>
         </td>
@@ -43,7 +45,8 @@
   </div>
 </template>
   
-  <script>
+<script>
+    // Props added to render component with JSON file.
   export default {
     name: 'ArticleComponent',
     props: {
@@ -55,10 +58,9 @@
       isLeft: Boolean
     }
   }
-  </script>
+</script>
   
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
+<style scoped>
   h1 {
     background-color: yellow;
   }
@@ -70,21 +72,5 @@
     
   }
 
-  /*
-  h3 {
-    margin: 40px 0 0;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: #42b983;
-  }
-  */
-  </style>
+</style>
   

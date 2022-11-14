@@ -1,54 +1,38 @@
 <template>
   <HelloWorld msg="Hello World, here is the news!" />
 
+  <!--Div created to hold all articles.-->
   <div id="articleView">
     <ul>
-      <li v-for="article in articles" :key="article._id">         
-        <ArticleComponent
+      <!--
+        Unordered list created to hold article components.
+        v-for used to render components with JSON file.
+      -->
+      <li v-for="(article, index) in articles" :key="article._id">     
+        
+        <!--
+          Component gets added with v-if to alternate images.
+        -->
+        <ArticleComponent v-if="index % 2 === 0"
           :media=article.media
           :title=article.title
           :author=article.author
           :summary=article.summary
           :link=article.link
+          :isLeft=true
+        />
+        <ArticleComponent v-else
+          :media=article.media
+          :title=article.title
+          :author=article.author
+          :summary=article.summary
+          :link=article.link
+          :isLeft=false
         />
       </li>    
     </ul>
   </div>
-  <!--
-  <div class="article">
-    <table>
-      <tr>
-        <td>
-          <img :src="articles[0].media" width="300" />
-        </td>
-        <td>
-          <table>
-            <tr>
-              <td>
-                <h1>{{ articles[0].title }}</h1>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h3>By {{ articles[0].author }}</h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>By {{ articles[0].summary }}</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a :href="articles[0].link">Read More...</a>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </div>
-  -->
+
 </template>
 
 <script>
