@@ -1,10 +1,14 @@
 <template>
     <div class="article">
+
+
     <table>
       <tr>
-        <td>
-          <img :src=media width="300"/>
+        
+        <td v-if="isLeft">
+            <img :src=media width="300"/>
         </td>
+
         <td>
           <table>
             <tr>
@@ -29,6 +33,11 @@
             </tr>
           </table>
         </td>
+
+        <td v-if="!isLeft">
+            <img :src=media width="300"/>
+        </td>
+
       </tr>
     </table>
   </div>
@@ -42,13 +51,26 @@
       title: String,
       author: String,
       summary: String,
-      link: String
+      link: String,
+      isLeft: Boolean
     }
   }
   </script>
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
+  h1 {
+    background-color: yellow;
+  }
+  p {
+    font-style: italic;
+  }
+  img {
+    border-radius: 5%;
+    
+  }
+
+  /*
   h3 {
     margin: 40px 0 0;
   }
@@ -63,5 +85,6 @@
   a {
     color: #42b983;
   }
+  */
   </style>
   
