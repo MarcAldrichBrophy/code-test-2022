@@ -1,5 +1,12 @@
 <template>
   <HelloWorld msg="Hello World, here is the news!" />
+  <ArticleComponent
+    :media=articles[0].media
+    :title=articles[0].title
+    :author=articles[0].author
+    :summary=articles[0].summary
+    :link=articles[0].link
+  />
   <!--
   <div class="article">
     <table>
@@ -40,13 +47,13 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import data from "./assets/data.json";
-//import ArticleComponent from "./components/ArticleComponent.vue";
+import ArticleComponent from "./components/ArticleComponent.vue";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
-    //ArticleComponent,
+    ArticleComponent,
   },
   data() {
     return {
