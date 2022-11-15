@@ -1,64 +1,23 @@
 <template>
     <div class="article">
 
-      <div>
-        <div v-if="isLeft">
-          <img :src=media width="300"/>
+        <div class="articleChild" v-if="isLeft">
+          <img style="float: left" :src=media >
         </div>
 
-        <h1>{{ title }}</h1>
-        <h3>By {{ author }}</h3>
-        <p>{{ summary }}</p>
-        <a :href=link>Read More...</a>
-
-        <div v-if="isLeft">
-          <img :src=media width="300"/>
+        <div class="articleChild">
+          <h1>{{ title }}</h1>
+          <h3>By {{ author }}</h3>
+          <p>{{ summary }}</p>
+          <a :href=link>Read More...</a>
         </div>
-      </div>
-    </div>
-    <!--
-    <table>
-      <tr>
         
-        Image gets added first if isLeft is true.
-        <td v-if="isLeft">
-            <img :src=media width="300"/>
-        </td>
 
-        <td>
-          <table>
-            <tr>
-              <td>
-                <h1>{{ title }}</h1>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h3>By {{ author }}</h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>{{ summary }}</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a :href=link>Read More...</a>
-              </td>
-            </tr>
-          </table>
-        </td>
-        
-       Image gets added first if isLeft is false.
-        <td v-if="!isLeft">
-            <img :src=media width="300"/>
-        </td>
+        <div class="articleChild" v-if="!isLeft">
+          <img style="float: right" :src=media>
+        </div>
 
-      </tr>
-    </table>
     </div>
-   -->
   
 </template>
   
@@ -85,9 +44,24 @@
     font-style: italic;
   }
   img {
+    width: 300px;
+    height: 150px;
     border-radius: 5%;
-    
   }
+
+  .article {
+    float: left;
+  }
+
+  .articleChild {
+    padding: 1rem 1rem;
+    text-align: left;
+    width: 30%;
+    float: left;
+    /*height: 1em;*/
+  }
+
+
 
 </style>
   
