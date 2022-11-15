@@ -1,8 +1,8 @@
 <template>
     <div class="article">
 
-        <div class="articleChild" v-if="isLeft">
-          <img style="float: left" :src=media >
+        <div class="imageChild" v-if="isLeft">
+          <img style="float: left" :src=media>
         </div>
 
         <div class="articleChild">
@@ -13,7 +13,7 @@
         </div>
         
 
-        <div class="articleChild" v-if="!isLeft">
+        <div class="imageChild" v-if="!isLeft">
           <img style="float: right" :src=media>
         </div>
 
@@ -44,23 +44,33 @@
     font-style: italic;
   }
   img {
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
     border-radius: 5%;
+    margin-top: 15%;
   }
 
   .article {
     float: left;
+    display: flex;
+    justify-content: center;
   }
 
   .articleChild {
     padding: 1rem 1rem;
     text-align: left;
-    width: 30%;
+    width: 35%;
+    height: 5%;
     float: left;
-    /*height: 1em;*/
   }
-
+  .imageChild {
+    padding: 1rem 1rem;
+    text-align: left;
+    width: 35%;
+    float: left;
+    display: flex;
+    justify-content: center;
+  }
 
 
 </style>
