@@ -1,8 +1,8 @@
 <template>
     <div class="article">
 
-        <div class="imageChild" v-if="isLeft">
-          <img style="float: left" :src=media>
+        <div class="imageChild" v-if="!isLeft">
+          <img style="float: right" :src=media>
         </div>
 
         <div class="articleChild">
@@ -13,8 +13,8 @@
         </div>
         
 
-        <div class="imageChild" v-if="!isLeft">
-          <img style="float: right" :src=media>
+        <div class="imageChild" v-if="isLeft">
+          <img style="float: left" :src=media>
         </div>
 
     </div>
