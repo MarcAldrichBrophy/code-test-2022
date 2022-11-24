@@ -13,21 +13,13 @@
         <!--
           Component gets added with v-if to alternate images.
         -->
-        <ArticleComponent v-if="index % 2 === 0"
+        <ArticleComponent
           :media=article.media
           :title=article.title
           :author=article.author
           :summary=article.summary
           :link=article.link
-          :isLeft=true
-        />
-        <ArticleComponent v-else
-          :media=article.media
-          :title=article.title
-          :author=article.author
-          :summary=article.summary
-          :link=article.link
-          :isLeft=false
+          :isLeft= "index % 2 === 0"
         />
       </li>    
     </ul>
